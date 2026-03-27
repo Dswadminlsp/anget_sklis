@@ -1,0 +1,38 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="aiohappyeyeballs" />
+          <option value="aiohttp" />
+          <option value="aiosignal" />
+          <option value="asyncpg" />
+          <option value="attrs" />
+          <option value="dataclasses-json" />
+          <option value="frozenlist" />
+          <option value="greenlet" />
+          <option value="httpx-sse" />
+          <option value="langchain-classic" />
+          <option value="langchain-community" />
+          <option value="langchain-postgres" />
+          <option value="langchain-text-splitters" />
+          <option value="marshmallow" />
+          <option value="multidict" />
+          <option value="mypy_extensions" />
+          <option value="numpy" />
+          <option value="pgvector" />
+          <option value="propcache" />
+          <option value="psycopg" />
+          <option value="psycopg-binary" />
+          <option value="psycopg-pool" />
+          <option value="pydantic-settings" />
+          <option value="python-dotenv" />
+          <option value="SQLAlchemy" />
+          <option value="typing-inspect" />
+          <option value="yarl" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

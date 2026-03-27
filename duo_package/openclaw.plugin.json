@@ -1,0 +1,79 @@
+{
+  "id": "duo-package",
+  "name": "独龙工具集 (Duo Package)",
+  "description": "TTS 语音服务 + 飞书/微信/QQ 音频发送。提供中文语音合成、SILK 格式转换、跨平台消息发送功能。",
+  "version": "1.0.0",
+  "channels": [],
+  "skills": [
+    "skills/duo-tts"
+  ],
+  "requires": {
+    "python3": true,
+    "ffmpeg": true
+  },
+  "scripts": [
+    "scripts/dulong_tts_server.py",
+    "scripts/wechat_qq.py"
+  ],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "tts": {
+        "type": "object",
+        "description": "TTS 服务配置",
+        "properties": {
+          "voice": {
+            "type": "string",
+            "default": "zh-CN-XiaoxiaoNeural",
+            "description": "TTS 语音（Edge TTS 格式）"
+          },
+          "speed": {
+            "type": "number",
+            "default": 1.0,
+            "description": "语速倍率"
+          },
+          "pitch": {
+            "type": "string",
+            "default": "0",
+            "description": "音调调整"
+          },
+          "style": {
+            "type": "string",
+            "default": "general",
+            "description": "语音风格"
+          }
+        }
+      },
+      "feishu": {
+        "type": "object",
+        "description": "飞书配置",
+        "properties": {
+          "appId": {
+            "type": "string",
+            "description": "飞书应用 App ID"
+          },
+          "appSecret": {
+            "type": "string",
+            "description": "飞书应用 App Secret"
+          },
+          "userId": {
+            "type": "string",
+            "description": "接收消息的用户 Open ID"
+          }
+        }
+      },
+      "qqbot": {
+        "type": "object",
+        "description": "QClaw TTS 配置",
+        "properties": {
+          "baseUrl": {
+            "type": "string",
+            "default": "http://localhost:8765",
+            "description": "独龙 TTS 服务地址（QClaw 填 http://localhost:8765）"
+          }
+        }
+      }
+    }
+  }
+}

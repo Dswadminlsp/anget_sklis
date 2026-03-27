@@ -1,0 +1,15 @@
+{
+  "id": "duo-qclaw",
+  "name": "独龙 TTS (QClaw)",
+  "description": "QClaw TTS 插件，指向独龙 TTS 服务。提供中文语音合成 + SILK 格式转换，让 QQ 机器人发出中文语音消息。",
+  "version": "1.0.0",
+  "channels": ["qqbot"],
+  "tts": {
+    "provider": "openai",
+    "openai": {
+      "baseUrl": "http://localhost:8765",
+      "apiKey": "dulong",
+      "model": "tts-1"
+    }
+  }
+}
