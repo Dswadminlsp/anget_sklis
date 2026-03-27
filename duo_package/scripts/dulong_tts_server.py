@@ -367,22 +367,8 @@ def openai_tts():
     # 过滤多余空格
     text = re.sub(r'\s+', ' ', text).strip()
 
-    # 过滤 emoji（防止表情符号被朗读出来）
-    emoji_pattern = re.compile(
-        "["
-        "\U0001F600-\U0001F64F"  # emoticons
-        "\U0001F300-\U0001F5FF"  # symbols & pictographs
-        "\U0001F680-\U0001F6FF"  # transport & map symbols
-        "\U0001F1E0-\U0001F1FF"  # flags
-        "\U00002702-\U000027B0"  # dingbats
-        "\U000024C2-\U0001F251"
-        "\U0001F900-\U0001F9FF"  # supplemental symbols
-        "\U0001FA00-\U0001FA6F"  # chess symbols
-        "\U0001FA70-\U0001FAFF"  # symbols and pictographs extended
-        "\U00002600-\U000026FF"  # misc symbols
-        "]+", flags=re.UNICODE
-    )
-    text = emoji_pattern.sub('', text)
+    # 过滤 emoji（U+1F000-U+1FFFF 覆盖所有 emoji，不影响中文）
+    text = re.sub(r'[\U0001F000-\U0001FFFF]', '', text)
 
     logger.warning(f"[TTS DEBUG] filtered_input={repr(text[:200])}")
 
